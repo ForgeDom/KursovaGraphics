@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Контакти | Багований світ</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header">
+      <img src="images/logo.png" alt="Лого" class="logo">
+      <h1>Зв’язатися з нами</h1>
+    </div>
+    
+    <nav>
+      <a href="index.html">Головна</a>
+      <a href="gallery.html">Галерея</a>
+      <a href="about.html">Про світ</a>
+      <a href="contact.html">Контакти</a>
+    </nav>
+  </header>
+
+  <main>
+    <form class="contact-form" id="contact-form">
+      <label>Ім’я: <input type="text" name="name" required></label>
+      <label>Email: <input type="email" name="email" required></label>
+      <label>Повідомлення: <textarea name="message" required></textarea></label>
+      <button type="submit">Надіслати</button>
+    </form>    
+  </main>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("-u0IXYj3IIPttC-wb"); // твій User ID / Public Key
+    })();
+
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm('service_9mqyenk', 'template_w4k1f5q', this)
+        .then(() => {
+          alert('Повідомлення надіслано!');
+          form.reset();
+        }, (error) => {
+          alert('Помилка при відправленні: ' + JSON.stringify(error));
+        });
+    });
+  </script>
+</body>
+</html>
