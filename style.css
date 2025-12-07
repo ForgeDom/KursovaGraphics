@@ -104,7 +104,7 @@ body {
   
   .gallery-intro {
   max-width: 900px;
-  margin: 0 auto 24px;
+  margin: 30px auto 24px;
   padding: 0 16px;
   line-height: 1.6;
 }
@@ -117,4 +117,23 @@ body {
 .gallery-grid {
   display: grid;
   gap: 16px;
+}
+
+.gallery-note{
+  margin: 30px auto;
+  max-width: 800px;
+}
+
+.contact-intro {
+  max-width: 700px;
+  margin: 0 auto 24px;
+  padding: 0 16px;
+  line-height: 1.6;
+}
+
+.contact-hint {
+  margin: 30px auto 0;
+  max-width: 700px;
+  opacity: 0.85;
+  font-size: 0.8em;
 }

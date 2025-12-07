@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
   <meta charset="UTF-8">
   <title>Контакти | Багований світ</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <div class="header">
       <img src="images/logo.png" alt="Лого" class="logo">
       <h1>Зв’язатися з нами</h1>
     </div>
-    
+
     <nav>
       <a href="index.html">Головна</a>
       <a href="gallery.html">Галерея</a>
@@ -22,22 +24,36 @@
   </header>
 
   <main>
+    <section class="contact-intro">
+      <p>
+        Маєш питання щодо «Багованого світу», помітив помилку або хочеш поділитися
+        враженнями від галереї? Напиши нам — ми відкриті до зворотного зв’язку
+        та ідей для розвитку проєкту.
+      </p>
+
+    </section>
+
     <form class="contact-form" id="contact-form">
       <label>Ім’я: <input type="text" name="name" required></label>
       <label>Email: <input type="email" name="email" required></label>
       <label>Повідомлення: <textarea name="message" required></textarea></label>
       <button type="submit">Надіслати</button>
-    </form>    
+    </form>
+
+    <p class="contact-hint">
+      Через цю форму можна зв’язатися з розробниками, уточнити деталі або
+      залишити пропозиції щодо візуальної частини й навігації сайту.
+    </p>
   </main>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    (function() {
+    (function () {
       emailjs.init("-u0IXYj3IIPttC-wb"); // твій User ID / Public Key
     })();
 
     const form = document.getElementById('contact-form');
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
 
       emailjs.sendForm('service_9mqyenk', 'template_w4k1f5q', this)
@@ -50,4 +66,5 @@
     });
   </script>
 </body>
+
 </html>
